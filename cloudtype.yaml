@@ -1,0 +1,11 @@
+name: rustdesk-hbbs
+services:
+  - name: hbbs
+    image: rustdesk/rustdesk-server:latest
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21117:21117
+    env:
+      - HBBS_RELAY=hbbr:21117
+    command: hbbs -r 0.0.0.0:21117
